@@ -1,12 +1,28 @@
 body{
     margin:0;
     padding:0;
+    background-color: #585151;
+}
+h1{
+    font-family: Helvetica;
+    font-size: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin:0;
+    padding: 0 0 20px 0;
+}
+#gameContainer{
+    width: 700px;
+    height: 450px;
+    margin: 10% auto;
+    border: solid slateblue 2px;
+    padding: 2%;
 }
 .bodypart {
     height: 8px;
     width: 8px;
     position:absolute;
-    background: red;
+    background:green;
     -moz-border-radius:2px;
     -webkit-border-radius:2px;
     border-radius:2px;
@@ -16,5 +32,5 @@ body{
     height: 8px;
     width: 8px;
     position:absolute;
-    background: green;
+    background: red;
 }

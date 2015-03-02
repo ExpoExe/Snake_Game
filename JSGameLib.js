@@ -1,7 +1,7 @@
 /**
  * Created by Justin_NZXT on 2/25/2015.
+ * Library for a simple 2D game in HTML Canvas
  */
-//Library for a simple 2D game in HTML Canvas
 
 key = KeyboardEvent;
 
@@ -27,17 +27,17 @@ function createCanvas(width, height) {
     return c;
 }
 
-function addObjectToBody(o) {
-    document.body.appendChild(o);
+function addObjectToPage(o, divName) {
+    document.getElementById(divName).appendChild(o);
 }
 
 function getContext(o) {
     return o.getContext("2d");
 }
 
-function getDrawArea(width, height) {
+function getDrawArea(width, height, divName) {
     var obj1 = createCanvas(width, height);
-    addObjectToBody(obj1);
+    addObjectToPage(obj1, divName);
     return getContext(obj1);
 }
 
