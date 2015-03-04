@@ -5,7 +5,6 @@
 var ctx = getDrawArea(400, 400, "game");
 
 var paused = false;
-var gameOver = false;
 var score = 0;
 var gameSpeed = 100;
 var scale = 10;
@@ -137,10 +136,15 @@ function reset(){
     tail = [];
     snakeHead = new _2DObject(Math.floor(ctx.canvas.width / scale) / 2, Math.floor(ctx.canvas.height / scale) / 2);
     initTail();
-    alert("Game Over. You hit a wall. Use WASD to restart.");
+    alert("Game Over. Use WASD to restart.");
 }
 
 function snakeCrash(){
+    for(var i = 0; i < tail.length; i++){
+        if(snakeHead.x == tail[i].x && snakeHead.y == tail[i].y) {
+            return true;
+        }
+    }
     if((snakeHead.y <= topBoundary) ||
         (snakeHead.y >=  bottomBoundary) ||
         (snakeHead.x <= leftBoundary) ||
