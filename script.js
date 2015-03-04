@@ -9,6 +9,8 @@ var gameOver = false;
 var score = 0;
 var gameSpeed = 100;
 var scale = 10;
+var scoreboardCount = 0;
+var highscore = 0;
 
 var topBoundary = -1;
 var bottomBoundary = ctx.canvas.height/scale;
@@ -117,6 +119,19 @@ function initTail(){
 }
 
 function reset(){
+    if(scoreboardCount < 10) {
+        scoreboardCount++;
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode(scoreboardCount + ": " + score);
+        node.appendChild(textnode);
+        document.getElementById("scoreContainer").appendChild(node);
+    }
+    else{
+        document.getElementById("scoreContainer").innerHTML = "<li>1: "+score+"</li>";
+        scoreboardCount = 1;
+    }
+    if(score >= highscore)
+        highscore = score;
     score = 0;
     food.place();
     tail = [];
@@ -143,6 +158,8 @@ autoInvoke(function(){
 });
 
 function gameLoop() {
+
+    setCookie("Highscore", highscore, 14);
 
     if (!paused) {
         switch (snakeHead.direction) {
@@ -191,6 +208,9 @@ function gameLoop() {
         if(snakeCrash()){
             reset();
         }
+
+        getCookie("Highscore");
+        document.getElementById("highscoreHeader").innerHTML = "High Score: " + highscore;
     }
 
     draw();
