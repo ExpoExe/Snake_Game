@@ -4,12 +4,38 @@ body{
     background-color: #585151;
 }
 h1{
-    font-family: Helvetica;
+    font-family: Helvetica, sans-serif;
     font-size: 30px;
     text-align: center;
     line-height: 30px;
     margin:0;
     padding: 0 0 20px 0;
+}
+h2{
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin:0;
+    padding: 0 0 10px 0;
+}
+h3{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    margin:0;
+    padding: 0 0 7px 0;
+
+}
+li{
+    width: 250px;
+    height: 20px;
+    padding: 8px 0 3px 20px;
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    border-bottom: solid black 1px;
 }
 #gameContainer{
     width: 700px;
@@ -17,6 +43,15 @@ h1{
     margin: 10% auto;
     border: solid slateblue 2px;
     padding: 2%;
+}
+#game{
+    float:left;
+}
+#gameInfo{
+    width: 270px;
+    height: 396px;
+    border: solid black 2px;
+    float:right;
 }
 .bodypart {
     height: 8px;
